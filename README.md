@@ -1,25 +1,41 @@
-# jupyterlab-extension-vscode
+# JupyterLab Extension Setup
 
-[JupyterLab Extension Documentation](https://jupyterlab.readthedocs.io/en/stable/extension/extension_tutorial.html#extension-tutorial)
+A guide for setting up a JupyterLab extension development environment using Miniconda on Windows.
 
-[Miniconda Installation for Windows](https://www.anaconda.com/docs/getting-started/miniconda/install#windows-installation)
+## References  
+- **JupyterLab Extension Documentation**  
+  https://jupyterlab.readthedocs.io/en/stable/extension/extension_tutorial.html#extension-tutorial
 
-1. Assuming we have miniconda installed on the machine, we can install NodeJS, JupyterLab, copier, and git within the conda environment. Open the "Anaconda Powershell Prompt" and run the following command:
+- **Miniconda Installation for Windows**  
+  https://www.anaconda.com/docs/getting-started/miniconda/install#windows-installation
 
-`conda create -n jupyterlab-ext --override-channels --strict-channel-priority -c conda-forge -c nodefaults jupyterlab=4 nodejs=20 git copier=9 jinja2-time`
+---
 
-2. Create a new repository if the user would like to publish to GitHub or share. Cd into this repository.
+## Setup Instructions
 
-3. We can activate the conda environment by opening a bash terminal and running this command: (may differ depending on miniconda installation location)
+### 1. Create a Conda Environment  
+With Miniconda installed, open the **Anaconda PowerShell Prompt** and create a new environment containing Node.js, JupyterLab, Copier, Git, and related dependencies:
 
-`source C:/Users/UserName/miniconda3/Scripts/activate jupyterlab-ext`
+```bash 
+conda create -n jupyterlab-ext --override-channels --strict-channel-priority -c conda-forge -c nodefaults jupyterlab=4 nodejs=20 git copier=9 jinja2-time
+```
 
-4. Clone the repository of extension examples from JupyterLab.
+2. If you would like to publish your work or share it, create a new GitHub repository and ```cd``` into the folder.
 
-`git clone https://github.com/jupyterlab/extension-examples.git`
+3. We can activate the conda environment by opening a bash terminal and running this command: (path may differ depending on miniconda installation location)
 
-5. Cd into the `extension-examples` repository, and make changes to the toolbar-button if necessary. 
+``` bash
+source C:/Users/UserName/miniconda3/Scripts/activate jupyterlab-ext
+```
 
-6. To build the Jupyter Lab, run `jlpm run build` from that repository. 
+4. Clone the official JupyterLab Extension Examples Repository.
 
-7. When complete, run `jupyter lab` to launch JupyterLab in the web browser.
+``` bash
+git clone https://github.com/jupyterlab/extension-examples.git
+```
+
+5. Navigate into the ```extension-examples``` repository, and make changes to the toolbar-button if necessary. 
+
+6. To build the Jupyter Lab, run ```jlpm run build``` from that repository. 
+
+7. When complete, run ```jupyter lab``` to launch JupyterLab in the web browser.
